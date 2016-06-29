@@ -1,12 +1,163 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 	<head>
-		<title></title>
-		<link rel="stylesheet" type="text/css" href="/css/style.css">
+		<!-- <META http-equiv=Content-Type content="text/html; charset=ISO-8859-1">
+		<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+		<!-- <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> -->
+		<!-- <meta content="es" http-equiv="Content-Language">
+		<meta content="text/html; charset=UTF-8" http-equiv="Content-Type"> -->
+		<title>Farmacia de turno</title>
+		<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+		<script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+		<meta name="keywords" content="">
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="canonical" href="" />
+		<!-- Open Graph metatags -->
+		<meta property="og:title" content=""/>
+		<meta property="og:type" content="article"/>
+		<meta property="og:image" content=""/>
+		<meta property="og:url" content=""/>
+		<meta property="og:description" content=""/>
+		<meta property="og:site_name" content=""/>
+		<!--[if lte IE 9]>
+			<link rel="stylesheet" type="text/css" href="./css/oldbrowsers.css">
+		<![endif]-->
+		
+		<!-- Favicons -->
+		<!-- 		<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="/apple-touch-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="/apple-touch-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="/apple-touch-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="/apple-touch-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="/apple-touch-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="/apple-touch-icon-152x152.png">
+		<link rel="icon" type="image/png" href="/favicon-196x196.png" sizes="196x196">
+		<link rel="icon" type="image/png" href="/favicon-160x160.png" sizes="160x160">
+		<link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96">
+		<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16">
+		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="msapplication-TileImage" content="/mstile-144x144.png"> -->
+		<!-- mio -->
+		<link href='https://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+		<link href='https://fonts.googleapis.com/css?family=Roboto:500,700,300italic,400' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="./fonts/fonts.css">
+		<!-- Stylesheets and polyfills -->
+		<link rel="stylesheet" type="text/css" href="./css/styles.css">
 	</head>
-	<body>
-		<p>HolaPedro!</p>
-		<a href="www.google.com">ver</a>
-		<script type="text/javascript" src="/js/script.js"></script>
+	<body class="">
+		<!-- Include of main header -->
+		<header></header>
+		<!-- End of main header -->
+		
+		<!-- Include of main content -->
+		<div class="main-menu">
+			<div class="first-line"></div>
+			<div class="second-line"></div>
+			<div class="third-line"></div>
+		</div>
+		<div id="infoBlock" class="info-block is-link">
+			<span class="icon-cancel-circle is-link"></span>
+			<div class="content-info-block">
+				<div class="children-info-block">
+					<span class="icon-info"></span>
+					<p id="msgBlock"></p>
+				</div>
+			</div>>
+		</div>
+		<section id="cargaImg" class="carga-img">
+			<div class="loader"></div>
+			<h3>Cargando...</h1>
+			<img src="./img/1.jpg" alt="">
+			<img src="./img/2.jpg" alt="">
+			<img src="./img/3.jpg" alt="">
+			<img src="./img/4.jpg" alt="">
+			<img src="./img/5.jpg" alt="">
+			<img src="./img/6.jpg" alt="">
+			<img src="./img/7.jpg" alt="">
+			<img src="./img/8.jpg" alt="">
+			<img src="./img/9.jpg" alt="">
+			<img src="./img/10.jpg" alt="">
+			<img src="./img/logo.jpg" alt="">
+		</section>
+		<main class="options">
+			<section>
+				<div>
+					<li>Servicios</li>
+					<div><a href="" id="farmacias" class="animation servicio-select" subtitle="Farmacia de turno"><span class="icon-pil"></span> Farmacias</a></div>
+					<div><a href="" id="colectivos" class="animation servicio-select" subtitle="Horario de colectivos"><span class="icon-bus"></span>Colectivos</a></div>
+					<div><a href="" id="telefonos" class="animation servicio-select" subtitle="Números telefónicos"><span class="icon-phone"></span>Teléfonos</a></div>
+					<div><a href="" id="contacto" class="animation servicio-select" subtitle="Contáctanos"><span class="icon-envelope"></span>Contáctanos</a></div>
+					<li>
+						<a href="https://plus.google.com/u/0/101544137738430014386/posts"><span class="icon-googleplus"></span></a>
+						<a href="https://www.facebook.com/nico.c123"><span class="icon-facebook"></span></a>
+					</li>
+				</div>
+			</section>
+		</main>
+		<main role="main" class="main">
+		<section class="complete-header">
+			<div class="header">
+				<div class="wrapper">
+					<!-- <h1 class="subTitle">Servicios<strong id="nombreLocalidad"></strong></h1> -->
+					<h1 class="subTitle">Servicios<strong>Chabás</strong></h1>
+					<p id="fecha" class="fecha"></p><span id="hora"></span>
+				</div>
+				<!-- <span class="icon-menu2"></span> -->
+			</div>
+			<div class="sub-header">
+				<div class="wrapper">
+					<h3><strong> Farmacia </strong> de <strong> turno</strong></h3>
+					<div class="botones-destinos">
+						<span>Para</span>
+						<div id="destinoRosario" class="button animation destinos destino-activo">Rosario</div>
+						<div id="destinoFirmat" class="button animation destinos">Firmat</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="content">
+			<div class="wrapper">
+				<div class="cambio-info">
+					<!-- HTML a cargar -->
+				</div>
+				<div class="publi-mayor">
+					<div class="publicidad-1"></div>
+				</div>
+			</div>
+			
+			<!-- Include of main footer -->
+			<footer>
+				<div class="imagenFooter img-footer1"></div>
+				<div class="imagenFooter img-footer2"></div>
+				<div class="imagenFooter img-footer3 no-visible"></div>
+				<div class="imagenFooter img-footer4 no-visible"></div>
+				<div class="imagenFooter img-footer5 no-visible"></div>
+				<div class="imagenFooter img-footer6 no-visible"></div>
+			</footer>
+		</section>
+		<!-- End of main footer -->
+		<!-- <div class="publi-mayor">
+					<div class="publicidad-1"></div>
+				<div class="publicidad-2 no-visible"></div>
+		</div> -->
+		</main>
+		<div class="publi-mayor-mobile">
+			<div class="publicidad-1"></div>
+		</div>
+		<!-- End of main content -->
+		<script src="./js/bundles/jquery-2.1.4.min.js"></script>
+		<!--<script src="./js/bundles/jquery.mobile-1.4.5.min.js"></script>-->
+		<script>window.jQuery || document.write('<script src="./js/bundles/jquery.min.js"><\/script>')</script>
+		<script src="./js/dateTime.js"></script>
+		<script src="./js/datos.js" ></script>
+		<script src="./js/script.js" ></script>
+		<script src="./js/buttonRipple.js"></script>
+		<!-- build:js ./js/script.js -->
+		<!-- endbuild -->
 	</body>
 </html>

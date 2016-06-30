@@ -94,10 +94,10 @@ body {
 		}
 		&:hover div { background: #00FFE2; }
 		&.opened { 
-			transform: rotate3d(0, 0, 1, 180deg));
+			transform: rotate3d(0, 0, 1, 180deg);
 			div {
-				&:nth-child(1){ transform: rotate3d(0, 0, 1, 30deg) translate3d(0, 3px, 0)); margin-left: 11px; width: 20px; }
-				&:nth-child(3){ transform: rotate3d(0, 0, 1, -30deg) translate3d(0, -3px, 0)); margin-left: 11px; width: 20px; }
+				&:nth-child(1){ transform: rotate3d(0, 0, 1, 30deg) translate3d(0, 3px, 0); margin-left: 11px; width: 20px; }
+				&:nth-child(3){ transform: rotate3d(0, 0, 1, -30deg) translate3d(0, -3px, 0); margin-left: 11px; width: 20px; }
 				// &:nth-child(2){ opacity: 0; }
 			}
 		}

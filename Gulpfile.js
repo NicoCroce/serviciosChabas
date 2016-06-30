@@ -8,7 +8,7 @@ var gulp = require("gulp"),//http://gulpjs.com/
 	rename = require('gulp-rename'),//https://www.npmjs.org/package/gulp-rename
 	sourcemaps = require('gulp-sourcemaps'), //Genera un mapa de referencias para los archivos. 
 	path = require('path'), //Es de Node. Concatena.
-	livereload = require('gulp-livereload'),
+	/*livereload = require('gulp-livereload'),*/
 	debug = require('gulp-debug'),
 	connect = require('gulp-connect'),
 	concat = require('gulp-concat'),
@@ -55,13 +55,13 @@ gulp.task("sass", function(){
 	return gulp.src(SASS_FILES)
 	// .pipe(debug({title: 'Source file: '}))
 	.pipe(sourcemaps.init())
-	.pipe(sass())
+	.pipe(sass().on('error', sass.logError))
 	.pipe(autoprefixer())	
 	.pipe(rename('style.css'))
 	// .pipe(debug({title: 'Dest file: '}))
 	.pipe(sourcemaps.write('./maps'))
-	.pipe(gulp.dest(path.join(FOLDER_DEV, 'css'))).on('error', gutil.log)
-	.pipe(livereload());
+	.pipe(gulp.dest(path.join(FOLDER_DEV, 'css'))).on('error', gutil.log);
+	/*.pipe(livereload());*/
 });
 
 gulp.task("copyTemplates", function () {
@@ -69,7 +69,7 @@ gulp.task("copyTemplates", function () {
 	showComment('Copying HTML Files');
 	return gulp.src(HTML_FILES)
 	.pipe(gulp.dest(destFolder)).on('error', gutil.log)
-	.pipe(livereload());
+	/*.pipe(livereload());*/
 });
 
 gulp.task("copyImg", function () {
@@ -105,7 +105,7 @@ gulp.task('jsConcat', ['copyJs'], function() {
     .pipe(sourcemaps.write('./maps'))
     // .pipe(uglify())
     .pipe(gulp.dest(path.join(FOLDER_DEV, 'js'))).on('error', gutil.log)
-    .pipe(livereload());
+    /*.pipe(livereload());*/
 });
 
 // gulp.task('compressImg', function() {
@@ -117,7 +117,7 @@ gulp.task('jsConcat', ['copyJs'], function() {
 // });
 
 gulp.task("watch", function(){
-	livereload.listen();
+	/*livereload.listen();*/
 	gulp.watch(SASS_FILES, ['sass']);
 	gulp.watch(HTML_FILES, ['copyTemplates']);
 	gulp.watch(JS_FILES, ['jsConcat', 'copyJs']);

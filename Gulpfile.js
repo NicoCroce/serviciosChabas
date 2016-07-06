@@ -32,6 +32,13 @@ var SASS_FILES = SRC_SASS_BASE + '/**/*.scss';
 var HTML_FILES = SRC_HTML_BASE + '/**/*.html';
 var JS_FILES = SRC_JAVASCRIPT_BASE + '/**/*.js';
 var JS_FILES_BUNDLES = path.join(SRC_JAVASCRIPT_BASE, 'bundles') + '/**/*';
+var FILES_DATA= path.join(FOLDER_ASSETS, 'data') + '/**/*';
+var JS_FILE_CONCAT_ORDER = [ 
+	SRC_JAVASCRIPT_BASE + '/dateTime.js',
+	SRC_JAVASCRIPT_BASE + '/datos.js',
+	SRC_JAVASCRIPT_BASE + '/script.js',
+	SRC_JAVASCRIPT_BASE + '/buttonRipple.js',
+	];
 var IMAGES_FILES = SRC_IMAGES_BASE + '/**/*';
 
 var ENVIRONMENT;  // 'dev' | 'dep' 
@@ -42,7 +49,7 @@ var runFirstTime = true;
 
 // require('gulp-stats')(gulp);
 
-gulp.task('connect', ['copyTemplates', 'sass', 'jsConcat', 'copyImg', 'copyIcons'], function() {
+gulp.task('connect', ['copyTemplates', 'sass', 'jsConcat', 'copyImg', 'copyIcons', 'copyData'], function() {
 	connect.server({
 		root: 'dev',
 		port: 2173
@@ -55,7 +62,7 @@ gulp.task("sass", function(){
 	return gulp.src(SRC_SASS_BASE + '/style.scss')
 	// .pipe(debug({title: 'Source file: '}))
 	.pipe(sourcemaps.init())
-	.pipe(sass().on('error', sass.logError))
+	.pipe(sass({includePaths: require('node-jeet-sass').includePaths}))
 	.pipe(autoprefixer())	
 	.pipe(rename('style.css'))
 	// .pipe(debug({title: 'Dest file: '}))
@@ -98,8 +105,15 @@ gulp.task("copyJs", function () {
 	.pipe(gulp.dest(path.join(destFolder, 'js/bundles'))).on('error', gutil.log);
 });
 
+gulp.task("copyData", function () {
+	var destFolder = returnDestFolder();	
+	showComment('Copying Data Files');
+	return gulp.src(FILES_DATA)
+	.pipe(gulp.dest(path.join(destFolder, 'data'))).on('error', gutil.log);
+});
+
 gulp.task('jsConcat', ['copyJs'], function() {
-  gulp.src(JS_FILES)
+  gulp.src(JS_FILE_CONCAT_ORDER)
   	.pipe(sourcemaps.init())
     .pipe( concat('script.js') ) // concat pulls all our files together before minifying them
     .pipe(sourcemaps.write('./maps'))
@@ -121,6 +135,7 @@ gulp.task("watch", function(){
 	gulp.watch(SASS_FILES, ['sass']);
 	gulp.watch(HTML_FILES, ['copyTemplates']);
 	gulp.watch(JS_FILES, ['jsConcat', 'copyJs']);
+	gulp.watch(FILES_DATA, ['copyData']);
 	// .on('change', function(event) {
  //      log('File ' + event.path + ' was ' + event.type + ', running tasks...');
  //    });

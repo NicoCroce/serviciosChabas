@@ -35,7 +35,8 @@
     "gulp-uglify": "^1.5.3",
     "gulp-util": "^3.0.7",
     "gulp-wrapper": "^1.0.0",
-    "jshint": "^2.9.2"
+    "jshint": "^2.9.2",
+    "node-jeet-sass": "^0.1.5"
   },
   "dependencies": {
     "gulp-install": "^0.6.0"

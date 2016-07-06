@@ -21,16 +21,16 @@ var DATOS = {
     }
 };
 
-$.getJSON("./datos/rosario.json", function(data){
+$.getJSON("./data/rosario.json", function(data){
     DATOS.colectivosRosario.data = data.colectivos;
     obtainDataBus("rosario");
 });
 
-$.getJSON("./datos/firmat.json", function(data){
+$.getJSON("./data/firmat.json", function(data){
     DATOS.colectivosFirmat.data = data.colectivos;
 });
 
-$.getJSON("./datos/telefonos.json", function(data){
+$.getJSON("./data/telefonos.json", function(data){
     DATOS.telefonos.data = data;
 });
 

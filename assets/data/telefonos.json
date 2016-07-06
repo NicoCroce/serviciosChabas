@@ -1,0 +1,31 @@
+{
+  "principales": [
+    {
+      "nombre": "Policía",
+      "numero": "0344-480-888",
+      "direccion": "'Ruta'"
+    },
+    {
+      "nombre": "Hospital",
+      "numero": "0344-480-888",
+      "direccion": "'Ruta'"
+    },
+    {
+      "nombre": "Bomberos",
+      "numero": "0344-480-888",
+      "direccion": "'Ruta'"
+    },
+    {
+      "nombre": "Biblioteca",
+      "numero": "0344-480-888",
+      "direccion": "'Ruta'"
+    }
+  ],
+  "remises": [
+    {
+      "nombre": "Pepito",
+      "numero": "0344-480-777",
+      "direccion": "'casa 1478'"
+    }
+  ]
+}

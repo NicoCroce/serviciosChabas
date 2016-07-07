@@ -23,6 +23,8 @@ $publi_color: #A4E0E0;
 *:before,
 *:after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
   //*behavior: url(/js/vendor/boxsizing.htc);
 }
 

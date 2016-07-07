@@ -43,7 +43,6 @@ $.getJSON("./data/telefonos.json", function(data){
             switch(nombre){
                 case 'rosario':
                     if (DATOS.colectivosRosario.data === null || DATOS.colectivosRosario.loaded) {return};
-                    debugger;
                     DATOS.colectivosRosario.data.forEach(function(element, index){
                         var hasDetails = '';
                         if (element.detalle != "") {hasDetails = 'has-details is-link'}
@@ -78,7 +77,6 @@ $.getJSON("./data/telefonos.json", function(data){
         setTimeout(function() {
             switch(nombre){
                 case 'principales':
-                debugger;
                     if (DATOS.telefonos.data === null || DATOS.telGeneral.loaded) {return};
                     setTimeout(function(){
                         DATOS.telefonos.data.principales.forEach(function(element, index){

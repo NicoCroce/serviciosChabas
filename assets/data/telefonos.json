@@ -3,22 +3,22 @@
     {
       "nombre": "Policía",
       "numero": "0344-480-888",
-      "direccion": "'Ruta'"
+      "direccion": "Ruta"
     },
     {
       "nombre": "Hospital",
       "numero": "0344-480-888",
-      "direccion": "'Ruta'"
+      "direccion": "Bv. Roque Saens Peña y Rosario"
     },
     {
       "nombre": "Bomberos",
       "numero": "0344-480-888",
-      "direccion": "'Ruta'"
+      "direccion": "España 1000"
     },
     {
       "nombre": "Biblioteca",
       "numero": "0344-480-888",
-      "direccion": "'Ruta'"
+      "direccion": "San Martin 3000"
     }
   ],
   "remises": [

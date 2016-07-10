@@ -25,7 +25,7 @@ $(window).load(function() {
             setTimeout(function(){
                 $('.carga-img').addClass('all');
             }, 500);
-        }, 2000);
+        }, 0); //2000
     }
 });
 

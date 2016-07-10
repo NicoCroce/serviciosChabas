@@ -38,7 +38,7 @@ $.getJSON("./data/telefonos.json", function(data){
 //*************************************    SECCIÓN  Obtiene datos    *************************************
 
     var obtainDataBus = function(nombre){
-        if (NombreService != "colectivos.html" && !loadedHTML) { return; }
+        if (NombreService != "colectivos.html" || !loadedHTML) { return; }
         setTimeout(function() {
             switch(nombre){
                 case 'rosario':
@@ -73,7 +73,7 @@ $.getJSON("./data/telefonos.json", function(data){
     };
 
     var obtainDataTel = function(nombre){
-        if (NombreService != "telefonos.html" && !loadedHTML) { return; }
+        if (NombreService != "telefonos.html" || !loadedHTML) { return; }
         setTimeout(function() {
             switch(nombre){
                 case 'principales':
@@ -82,9 +82,9 @@ $.getJSON("./data/telefonos.json", function(data){
                         DATOS.telefonos.data.principales.forEach(function(element, index){
                         $('#telPrincipales').append(
                             "<tr>"+
-                            "<td>Policía</td>"
-                                +"<td><div><span class='icon-phone'></span><span class='dato'><strong>03464-480325</strong></span></div></td>"
-                                +"<td><div><span class='icon-location'></span><span class='dato'><strong>Dr. M. Moreno 1639</strong></span></div></td></tr>"
+                            "<td>" + element.nombre + "</td>"
+                                +"<td><div><span class='icon-phone'></span><span class='dato'><strong>" + element.numero + "</strong></span></div></td>"
+                                +"<td><div><span class='icon-location'></span><span class='dato'><strong>" + element.direccion + "</strong></span></div></td></tr>"
                         );
                     });
                     DATOS.telGeneral.loaded = true;
@@ -92,14 +92,14 @@ $.getJSON("./data/telefonos.json", function(data){
                     }, 50);
                     break;              
                 case 'remises':
-                    if (DATOS.telRemises.data === null || DATOS.telRemises.loaded) {return};
+                    if (DATOS.telefonos.data === null || DATOS.telRemises.loaded) {return};
                     setTimeout(function(){
-                        DATOS.telRemises.data.remises.forEach(function(element, index){
+                        DATOS.telefonos.data.remises.forEach(function(element, index){
                         $('#telRemises').append(
                             "<tr>"+
-                            "<td>Policía</td>"
-                                +"<td><div><span class='icon-phone'></span><span class='dato'><strong>03464-480325</strong></span></div></td>"
-                                +"<td><div><span class='icon-location'></span><span class='dato'><strong>Dr. M. Moreno 1639</strong></span></div></td></tr>"
+                            "<td>" + element.nombre + "</td>"
+                                +"<td><div><span class='icon-phone'></span><span class='dato'><strong>" + element.numero + "</strong></span></div></td>"
+                                +"<td><div><span class='icon-location'></span><span class='dato'><strong>" + element.direccion + "</strong></span></div></td></tr>"
                         );
                     });
                     DATOS.telRemises.loaded = true;
@@ -110,11 +110,11 @@ $.getJSON("./data/telefonos.json", function(data){
                     if (DATOS.telefonos.data === null || DATOS.telRoticerias.loaded) {return};
                     setTimeout(function(){
                         DATOS.telefonos.data.roticerias.forEach(function(element, index){
-                        $('#telPRoticerias').append(
-                            "<tr>"+
-                            "<td>Policía</td>"
-                                +"<td><div><span class='icon-phone'></span><span class='dato'><strong>03464-480325</strong></span></div></td>"
-                                +"<td><div><span class='icon-location'></span><span class='dato'><strong>Dr. M. Moreno 1639</strong></span></div></td></tr>"
+                        $('#telRoticerias').append(
+                           "<tr>"+
+                            "<td>" + element.nombre + "</td>"
+                                +"<td><div><span class='icon-phone'></span><span class='dato'><strong>" + element.numero + "</strong></span></div></td>"
+                                +"<td><div><span class='icon-location'></span><span class='dato'><strong>" + element.direccion + "</strong></span></div></td></tr>"
                         );
                     });
                     DATOS.telRoticerias.loaded = true;

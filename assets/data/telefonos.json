@@ -27,5 +27,17 @@
       "numero": "0344-480-777",
       "direccion": "'casa 1478'"
     }
+  ],
+  "roticerias": [
+    {
+      "nombre": "Castagnani",
+      "numero": "0344-480-280",
+      "direccion": "'Moreno y Mitre'"
+    },
+    {
+      "nombre": "Don Marino",
+      "numero": "0344-480-803",
+      "direccion": "'Rivadavia'"
+    }
   ]
 }

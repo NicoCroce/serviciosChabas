@@ -28,8 +28,10 @@ var SRC_IMAGES_BASE = path.join(FOLDER_ASSETS, 'images');
 var SRC_FONTS_BASE = path.join(FOLDER_ASSETS, 'icons');
 var SRC_JAVASCRIPT_BASE = path.join(FOLDER_ASSETS, 'js');
 var SRC_HTML_BASE = path.join(FOLDER_ASSETS, 'templates');
+var SRC_DATA_BASE = path.join(FOLDER_ASSETS, 'data');
 
 var SASS_FILES = SRC_SASS_BASE + '/**/*.scss';
+var DATA_FILES = SRC_DATA_BASE + '/**/*.json';
 var HTML_FILES = SRC_HTML_BASE + '/**/*.html';
 var JS_FILES = SRC_JAVASCRIPT_BASE + '/**/*.js';
 var JS_FILES_BUNDLES = path.join(SRC_JAVASCRIPT_BASE, 'bundles') + '/**/*';
@@ -68,11 +70,14 @@ gulp.task("copyJs", gulp.series(cleanJs, copyJsFunction));
 
 gulp.task('jsConcat', gulp.series('copyJs', jsConcatFunction));
 
+gulp.task('copyData', gulp.series(cleanData, copyData));
+
 gulp.task("watch", function (done) {
 	gulp.watch(SASS_FILES, gulp.series('sass'));
 	gulp.watch(HTML_FILES, gulp.series('copyTemplates'));
 	gulp.watch(JS_FILES, gulp.series("jsConcat"));
 	gulp.watch(ICON_FILES, gulp.series('copyIcons'));
+	gulp.watch(DATA_FILES, gulp.series('copyData'));
 	return done();
 
 /*	gulp.watch(SASS_FILES).on('change', function (pathFile) {
@@ -95,7 +100,7 @@ gulp.task("watch", function (done) {
 	});*/
 });
 
-gulp.task('connect', gulp.series(gulp.parallel(copyTemplatesFunction, sassFunction, "jsConcat", copyImgFunction, copyIconsFunction), connectServer));
+gulp.task('connect', gulp.series(gulp.parallel(copyTemplatesFunction, sassFunction, copyData, "jsConcat", copyImgFunction, copyIconsFunction), connectServer));
 
 
 //*************************************    SECCIÓN  Functions    *************************************
@@ -124,12 +129,24 @@ function cleanJs(done) {
 	return del([FOLDER_DEV + '/js/bundles']);
 };
 
+function cleanData(done){
+	del([FOLDER_DEV + '/data']);
+	return done();
+}
+
 function connectServer(done) {
 	connect.server({
 		root: FOLDER_DEV,
 		port: 2173
 	});
 	return done();
+};
+
+function copyData() {
+	var destFolder = returnDestFolder() + '/data';
+	showComment('Copying DATA Files');
+	return gulp.src(DATA_FILES)
+		.pipe(gulp.dest(destFolder)).on('error', gutil.log);
 };
 
 function sassFunction() {

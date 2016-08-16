@@ -11,9 +11,7 @@ var gulp = require("gulp"),//http://gulpjs.com/
 	debug = require('gulp-debug'),
 	connect = require('gulp-connect'),
 	concat = require('gulp-concat'),
-	changed = require('gulp-changed'),
 	del = require('del'),
-	cleanDest = require('gulp-clean-dest'),
 	// imagemin = require('gulp-imagemin'),
 	del = require('del'),
 	log = gutil.log;
@@ -73,7 +71,7 @@ gulp.task('jsConcat', gulp.series('copyJs', jsConcatFunction));
 gulp.task("watch", function (done) {
 	gulp.watch(SASS_FILES, gulp.series('sass'));
 	gulp.watch(HTML_FILES, gulp.series('copyTemplates'));
-	gulp.watch(JS_FILES, gulp.series("jsConcat", "copyJs"));
+	gulp.watch(JS_FILES, gulp.series("jsConcat"));
 	gulp.watch(ICON_FILES, gulp.series('copyIcons'));
 	return done();
 
@@ -97,7 +95,7 @@ gulp.task("watch", function (done) {
 	});*/
 });
 
-gulp.task('connect', gulp.series(gulp.parallel(copyTemplatesFunction, sassFunction, copyJsFunction, copyImgFunction, copyIconsFunction), connectServer));
+gulp.task('connect', gulp.series(gulp.parallel(copyTemplatesFunction, sassFunction, "jsConcat", copyImgFunction, copyIconsFunction), connectServer));
 
 
 //*************************************    SECCIÓN  Functions    *************************************

@@ -13,6 +13,7 @@ var gulp = require("gulp"),//http://gulpjs.com/
 	connect = require('gulp-connect'),
 	concat = require('gulp-concat'),
 	// imagemin = require('gulp-imagemin'),
+	del = require('del'),
 	log = gutil.log;
 
 
@@ -49,13 +50,16 @@ var runFirstTime = true;
 
 // require('gulp-stats')(gulp);
 
-gulp.task('connect', ['copyTemplates', 'sass', 'jsConcat', 'copyImg', 'copyIcons', 'copyData'], function() {
+gulp.task('connect', ['clean', 'copyTemplates', 'sass', 'jsConcat', 'copyImg', 'copyIcons', 'copyData'], function() {
 	connect.server({
 		root: 'dev',
 		port: 2173
 	});
 });
 
+gulp.task('clean', function () {
+	return del(['dev']);
+})
 
 gulp.task("sass", function(){
 	showComment('Changed SASS File');
@@ -72,10 +76,11 @@ gulp.task("sass", function(){
 });
 
 gulp.task("copyTemplates", function () {
-	var destFolder = returnDestFolder();	
+	var destFolder = returnDestFolder();
+	del(['dev/partials']);
 	showComment('Copying HTML Files');
 	return gulp.src(HTML_FILES)
-	.pipe(gulp.dest(destFolder)).on('error', gutil.log)
+	.pipe(gulp.dest(destFolder)).on('error', gutil.log);
 	/*.pipe(livereload());*/
 });
 
@@ -87,7 +92,7 @@ gulp.task("copyImg", function () {
 });
 
 gulp.task("copyIcons", function () {
-	var destFolder = returnDestFolder();	
+	var destFolder = returnDestFolder();
 	log('Copying Icons Files');
 	
 	gulp.src(SRC_FONTS_BASE + '/**/*.css')
@@ -106,7 +111,8 @@ gulp.task("copyJs", function () {
 });
 
 gulp.task("copyData", function () {
-	var destFolder = returnDestFolder();	
+/*	del(['dev/data']);
+*/	var destFolder = returnDestFolder();	
 	showComment('Copying Data Files');
 	return gulp.src(FILES_DATA)
 	.pipe(gulp.dest(path.join(destFolder, 'data'))).on('error', gutil.log);
@@ -118,7 +124,7 @@ gulp.task('jsConcat', ['copyJs'], function() {
     .pipe( concat('script.js') ) // concat pulls all our files together before minifying them
     .pipe(sourcemaps.write('./maps'))
     // .pipe(uglify())
-    .pipe(gulp.dest(path.join(FOLDER_DEV, 'js'))).on('error', gutil.log)
+    .pipe(gulp.dest(path.join(FOLDER_DEV, 'js'))).on('error', gutil.log);
     /*.pipe(livereload());*/
 });
 

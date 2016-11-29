@@ -35,7 +35,7 @@
     "gulp-uglify": "^2.0.0",
     "gulp-util": "^3.0.7",
     "gulp-wrapper": "^1.0.0",
-    "jshint": "^2.9.2"
+    "jshint": "^2.9.2",
     "merge-stream": "^1.0.0"
   },
   "dependencies": {

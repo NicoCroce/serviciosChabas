@@ -165,7 +165,7 @@ function connectServer(done) {
 };
 
 function copyData() {
-	var destFolder = returnDestFolder() + '/data';
+	var destFolder = ENVIRONMENT + '/data';
 	showComment('Copying DATA Files');
 	return gulp.src(DATA_FILES)
 		.pipe(gulp.dest(destFolder)).on('error', gutil.log);

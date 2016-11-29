@@ -18,7 +18,7 @@ setTimeout(function(){
 
 var loadedHTML = false;
 
-$(window).load(function() {
+$(window).on('load', (function() {
     if(!pasoTiempoInicio){
         setTimeout(function(){
             $('.carga-img').addClass('hide');
@@ -27,7 +27,7 @@ $(window).load(function() {
             }, 500);
         }, 0); //2000
     }
-});
+}));
 
 $(document).ready(function() {
     window.setInterval(function() {

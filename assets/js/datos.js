@@ -23,7 +23,7 @@ var DATOS = {
 
 $.getJSON("./data/rosario.json", function (data) {
     DATOS.colectivosRosario.data = data.colectivos;
-    obtainDataBus("rosario");
+    /*obtainDataBus("rosario");*/
 });
 
 $.getJSON("./data/firmat.json", function (data) {
@@ -47,7 +47,7 @@ var obtainDataBus = function (nombre) {
                     var hasDetails = '';
                     if (element.detalle != "") { hasDetails = 'has-details is-link' }
                     $('#tablaRosario').append(
-                        "<tr id='filaColectivo' class='" + hasDetails + "' detalle= " + element.detalle + ">" +
+                        "<tr id='filaColectivo1" + index + "' class='" + hasDetails + "' detalle= " + element.detalle + ">" +
                         "<td>" + element.horario + "</td>" +
                         "<td>" + element.empresa + "</td>" +
                         "<td class='icon-info'></td></tr>"
@@ -61,7 +61,7 @@ var obtainDataBus = function (nombre) {
                     var hasDetails = '';
                     if (element.detalle != "") { hasDetails = 'has-details is-link' }
                     $('#tablaFirmat').append(
-                        "<tr id='filaColectivo' class='" + hasDetails + "' detalle= " + element.detalle + "><td>" + element.horario + "</td><td>" + element.empresa + "</td><td class='icon-info'></td></tr>"
+                        "<tr id='filaColectivo2" + index + "' class='" + hasDetails + "' detalle= " + element.detalle + "><td>" + element.horario + "</td><td>" + element.empresa + "</td><td class='icon-info'></td></tr>"
                     );
                 });
                 DATOS.colectivosFirmat.loaded = true;
@@ -69,7 +69,7 @@ var obtainDataBus = function (nombre) {
             default:
                 break;
         }
-    }, 50);
+    }, 500);
 };
 
 var obtainDataTel = function (nombre) {

@@ -240,10 +240,8 @@ $(window).resize(function() {
 
 //((((((((((((((((((((((((((((((((((((((      Carga HTML Telefonos       ))))))))))))))))))))))))))))))))))))))
 $(document).on('click', '.bt-instituciones', function() {
-    var idTelefono = $(this).attr('id') + '.html';
     $('.bt-instituciones').removeClass('active');
     $(this).addClass('active');
-    $('.tabla-telefonos').load('./partials/telefonos/' + idTelefono);
     obtainDataTel($(this).attr('id'));
 });
 

@@ -191,12 +191,15 @@ function sassFunction() {
 function copyBower() {
 	var jeet = gulp.src(BOWER_COMPONENTS + '/jeet/scss/jeet/**/*')
 		.pipe(gulp.dest(SRC_SASS_BASE + '/libs/jeet'));
-	/*var jqueryFiles = gulp.src(BOWER_COMPONENTS + '/jquery/dist/jquery.min.js')
-		.pipe(gulp.dest(SRC_JAVASCRIPT_BASE + '/bundles/min/'));*/
 	var normalize = gulp.src(BOWER_COMPONENTS + '/normalize-scss/sass/**/*')
 		.pipe(gulp.dest(SRC_SASS_BASE + '/libs/normalize/'));
-
-	return merge(jeet, /*jqueryFiles,*/ normalize);
+	var angular = gulp.src(BOWER_COMPONENTS + '/angular/angular.min.js')
+		.pipe(gulp.dest(SRC_JAVASCRIPT_BASE + '/bundles/min'));
+	var uiRouter = gulp.src(BOWER_COMPONENTS + '/angular-ui-router/release/angular-ui-router.min.js')
+		.pipe(gulp.dest(SRC_JAVASCRIPT_BASE + '/bundles/min'));
+	var angularResource = gulp.src(BOWER_COMPONENTS + '/angular-resource/angular-resource.min.js')
+		.pipe(gulp.dest(SRC_JAVASCRIPT_BASE + '/bundles/min'));
+	return merge(jeet, normalize, angular, uiRouter, angularResource);
 };
 
 function copyTemplatesFunction() {

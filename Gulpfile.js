@@ -42,10 +42,11 @@ var JS_FILES_BUNDLES = path.join(SRC_JAVASCRIPT_BASE, 'bundles') + '/**/*';
 var FILES_DATA= path.join(FOLDER_ASSETS, 'data') + '/**/*';
 
 var JS_FILE_CONCAT_ORDER = [
-	SRC_JAVASCRIPT_BASE + '/dateTime.js',
+	SRC_JAVASCRIPT_BASE + '/scriptAngular.js'
+/*	SRC_JAVASCRIPT_BASE + '/dateTime.js',
 	SRC_JAVASCRIPT_BASE + '/datos.js',
 	SRC_JAVASCRIPT_BASE + '/script.js',
-	SRC_JAVASCRIPT_BASE + '/buttonRipple.js',
+	SRC_JAVASCRIPT_BASE + '/buttonRipple.js',*/
 	];
 var IMAGES_FILES = SRC_IMAGES_BASE + '/**/*';
 var ICON_FILES = SRC_FONTS_BASE + '/**/*';

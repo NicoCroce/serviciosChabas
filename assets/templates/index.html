@@ -1,58 +1,59 @@
 <!DOCTYPE html>
-<html lang="es">
-	<head>
-		<!-- <META http-equiv=Content-Type content="text/html; charset=ISO-8859-1">
-		<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
-		<!-- <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> -->
-		<!-- <meta content="es" http-equiv="Content-Language">
-		<meta content="text/html; charset=UTF-8" http-equiv="Content-Type"> -->
-		<title>Farmacia de turno</title>
-		<script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
-		<script src="https://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-		<meta name="keywords" content="">
-		<meta name="description" content="">
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<link rel="canonical" href="" />
-		<!-- Open Graph metatags -->
-		<meta property="og:title" content=""/>
-		<meta property="og:type" content="article"/>
-		<meta property="og:image" content=""/>
-		<meta property="og:url" content=""/>
-		<meta property="og:description" content=""/>
-		<meta property="og:site_name" content=""/>
-		
-		<!-- mio -->
-		<link href='https://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
-		<link href='https://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-		<link href='https://fonts.googleapis.com/css?family=Roboto:500,700,300italic,400' rel='stylesheet' type='text/css'>
-		<link rel="stylesheet" type="text/css" href="./css/iconServicios.css">
-		<!-- Stylesheets and polyfills -->
-		<link rel="stylesheet" type="text/css" href="./css/style.css">
-	</head>
-	<body class="">
-		<!-- Include of main header -->
-		<header></header>
-		<!-- End of main header -->
+<html lang="es" ng-app="servicios-chabas">
 
-		<!-- Include of main content -->
-		<div class="main-menu">
-			<div class="first-line"></div>
-			<div class="second-line"></div>
-			<div class="third-line"></div>
-		</div>
-		<div id="infoBlock" class="info-block is-link">
-			<span class="icon-cancel-circle is-link"></span>
-			<div class="content-info-block">
-				<div class="children-info-block">
-					<span class="icon-info"></span>
-					<p id="msgBlock"></p>
-				</div>
-			</div>>
-		</div>
-		<section id="cargaImg" class="carga-img">
-			<div class="loader"></div>
-			<h3>Cargando...</h1>
+<head>
+	<!-- <META http-equiv=Content-Type content="text/html; charset=ISO-8859-1">
+		<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+	<!-- <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" /> -->
+	<!-- <meta content="es" http-equiv="Content-Language">
+		<meta content="text/html; charset=UTF-8" http-equiv="Content-Type"> -->
+	<title>Farmacia de turno</title>
+	<meta name="keywords" content="">
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<link rel="canonical" href="" />
+	<!-- Open Graph metatags -->
+	<meta property="og:title" content="" />
+	<meta property="og:type" content="article" />
+	<meta property="og:image" content="" />
+	<meta property="og:url" content="" />
+	<meta property="og:description" content="" />
+	<meta property="og:site_name" content="" />
+
+	<!-- mio -->
+	<link href='https://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=PT+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Roboto:500,700,300italic,400' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" type="text/css" href="./css/iconServicios.css">
+	<!-- Stylesheets and polyfills -->
+	<link rel="stylesheet" type="text/css" href="./css/style.css">
+</head>
+
+<body class="">
+	<h1>NICO <span ng-bind="message"></span></h1>
+	<!-- Include of main header -->
+	<header></header>
+	<!-- End of main header -->
+
+	<!-- Include of main content -->
+	<div class="main-menu">
+		<div class="first-line"></div>
+		<div class="second-line"></div>
+		<div class="third-line"></div>
+	</div>
+	<div id="infoBlock" class="info-block is-link">
+		<span class="icon-cancel-circle is-link"></span>
+		<div class="content-info-block">
+			<div class="children-info-block">
+				<span class="icon-info"></span>
+				<p id="msgBlock"></p>
+			</div>
+		</div>>
+	</div>
+	<!--<section id="cargaImg" class="carga-img">
+		<div class="loader"></div>
+		<h3>Cargando...</h1>
 			<img src="./img/1.jpg" alt="">
 			<img src="./img/2.jpg" alt="">
 			<img src="./img/3.jpg" alt="">
@@ -64,23 +65,23 @@
 			<img src="./img/9.jpg" alt="">
 			<img src="./img/10.jpg" alt="">
 			<img src="./img/logo.jpg" alt="">
+	</section>-->
+	<main class="options">
+		<section>
+			<div>
+				<li>Servicios</li>
+				<div><a href="" id="farmacias" class="animation servicio-select" subtitle="Farmacia de turno"><span class="icon-pil"></span> Farmacias</a></div>
+				<div><a href="" id="colectivos" class="animation servicio-select" subtitle="Horario de colectivos"><span class="icon-bus"></span>Colectivos</a></div>
+				<div><a href="" id="telefonos" class="animation servicio-select" subtitle="Números telefónicos"><span class="icon-phone"></span>Teléfonos</a></div>
+				<div><a href="" id="contacto" class="animation servicio-select" subtitle="Contáctanos"><span class="icon-envelope"></span>Contáctanos</a></div>
+				<li>
+					<a href="https://plus.google.com/u/0/101544137738430014386/posts"><span class="icon-googleplus"></span></a>
+					<a href="https://www.facebook.com/nico.c123"><span class="icon-facebook"></span></a>
+				</li>
+			</div>
 		</section>
-		<main class="options">
-			<section>
-				<div>
-					<li>Servicios</li>
-					<div><a href="" id="farmacias" class="animation servicio-select" subtitle="Farmacia de turno"><span class="icon-pil"></span> Farmacias</a></div>
-					<div><a href="" id="colectivos" class="animation servicio-select" subtitle="Horario de colectivos"><span class="icon-bus"></span>Colectivos</a></div>
-					<div><a href="" id="telefonos" class="animation servicio-select" subtitle="Números telefónicos"><span class="icon-phone"></span>Teléfonos</a></div>
-					<div><a href="" id="contacto" class="animation servicio-select" subtitle="Contáctanos"><span class="icon-envelope"></span>Contáctanos</a></div>
-					<li>
-						<a href="https://plus.google.com/u/0/101544137738430014386/posts"><span class="icon-googleplus"></span></a>
-						<a href="https://www.facebook.com/nico.c123"><span class="icon-facebook"></span></a>
-					</li>
-				</div>
-			</section>
-		</main>
-		<main role="main" class="main">
+	</main>
+	<main role="main" class="main">
 		<section class="complete-header">
 			<div class="header">
 				<div class="wrapper">
@@ -103,9 +104,7 @@
 		</section>
 		<section class="content">
 			<div class="wrapper">
-				<div id="changeInfo" class="cambio-info">
-					<!-- HTML a cargar -->
-				</div>
+				<div ui-view></div>
 				<div class="publi-mayor">
 					<div class="publicidad-1"></div>
 				</div>
@@ -126,18 +125,21 @@
 					<div class="publicidad-1"></div>
 				<div class="publicidad-2 no-visible"></div>
 		</div> -->
-		</main>
-		<div class="publi-mayor-mobile">
-			<div class="publicidad-1"></div>
-		</div>
-		<!-- End of main content -->
-		<script src="./js/bundles/min/jquery-3.1.1.min.js"></script>
-		<!--<script src="./js/bundles/jquery.mobile-1.4.5.min.js"></script>-->
-		<script src="./js/script.js" ></script>
-		<!--<script src="./js/buttonRipple.js"></script>-->
-		<!-- build:js ./js/script.js -->
-		<!-- endbuild -->
-	</body>
-	<footer>
-	</footer>
+	</main>
+	<div class="publi-mayor-mobile">
+		<div class="publicidad-1"></div>
+	</div>
+	<!-- End of main content -->
+	<script src="./js/bundles/min/jquery-3.1.1.min.js"></script>
+	<script src="./js/bundles/min/angular.min.js"></script>
+	<script src="./js/bundles/min/angular-ui-router.min.js"></script>
+	<script src="./js/script.js"></script>
+	<!--<script src="./js/bundles/jquery.mobile-1.4.5.min.js"></script>-->
+	<!--<script src="./js/buttonRipple.js"></script>-->
+	<!-- build:js ./js/script.js -->
+	<!-- endbuild -->
+</body>
+<footer>
+</footer>
+
 </html>
